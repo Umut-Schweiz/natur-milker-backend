@@ -34,3 +34,8 @@ export async function getProductsByProducerId(producerId){
     let products = await productRepository.getAllProducts(producerId);
     return products;
 }
+
+// export async function getSelectedProduct(canton, type ){
+//     let product = await productRepository.findByCantonAndType(canton , type );
+//     return product;
+// }

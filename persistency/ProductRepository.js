@@ -1,5 +1,6 @@
 import db from "../models/SequelizeSetup.js"
 
+
 export async function getAll(){
     return await db.products.findAll();
 }
@@ -39,3 +40,9 @@ export async function getAllProducts(producerId){
 }
 
 
+// export async function findByCantonAndType(canton , type){
+//   return await db.products.findAll({
+//      where: {  Canton: canton,
+//       ProductType: type }
+//   });
+// }

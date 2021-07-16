@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
+import helmet from 'helmet'
 
 // Middlewares
 import cookieParser from 'cookie-parser'
@@ -13,6 +14,7 @@ import producerRouter from './routes/ProducerRoute.js'
 
 let app = express()
 
+app.use(helmet())
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -25,5 +27,5 @@ app.use('/products', productsRouter)
 app.use('/producer', producerRouter)
 
 app.listen(3005, () => {
-  console.log('listening on 3000')
+  console.log('listening on 3005')
 })

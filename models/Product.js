@@ -11,9 +11,15 @@ export default (sequelize, Sequelize) => {
       primaryKey: true
     },
     Price: {
-      type: Sequelize.INTEGER
+      type: Sequelize.STRING
+    },
+    Canton: {
+      type: Sequelize.STRING
     },
     Address: {
+      type: Sequelize.STRING
+    },
+    ProductType: {
       type: Sequelize.STRING
     }
   }, { timestamps: false })

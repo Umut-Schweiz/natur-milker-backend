@@ -17,7 +17,7 @@ export default (sequelize, Sequelize) => {
       type: Sequelize.STRING
     },
     PhoneNumber: {
-      type: Sequelize.INTEGER
+      type: Sequelize.STRING
     },
     CompanyName: {
       type: Sequelize.STRING

@@ -1,8 +1,8 @@
 {
-  "HOST": "127.0.0.1",
-  "USER": "root",
-  "PASSWORD": "Umut1992",
-  "DB": "world",
+  "HOST": "164.90.168.84",
+  "USER": "nam_user",
+  "PASSWORD": "UmEr2021!",
+  "DB": "nam_user",
   "dialect": "mysql",
   "pool": {
     "max": 5,

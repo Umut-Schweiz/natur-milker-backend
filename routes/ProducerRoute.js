@@ -1,6 +1,8 @@
 import express from 'express';
 var router = express.Router();
 import * as service from '../services/ProducerService.js'
+import checkJwt from '../authz/check-jwt.js'
+
 
 
 /* GET all producer listing. */
@@ -13,7 +15,14 @@ router.get('/', async function(req, res, next) {
 router.get('/:id', async function(req, res, next) {
   let producerId = req.params.id;
   const producer = await service.getProducerById(producerId)
-  res.send(producer);
+
+  if (producer){
+    res.send(producer);
+  }else{
+    res.send({});
+  }
+
+  // res.send(producer);
 });
 
 
@@ -35,7 +44,7 @@ router.delete('/:id', async function(req, res, next) {
 
 /** update a producer by id */
 
-router.put('/:id', async function(req, res, next) {
+router.put('/:id',checkJwt, async function(req, res, next) {
   let producerId = req.params.id;
   let producerToBeUpdated = req.body;
   let updatedProducer = await service.updateProducer(producerId, producerToBeUpdated);
