@@ -62,15 +62,13 @@ router.put('/:id',checkJwt, async function(req, res, next) {
 });
 
 
-// /** GET a product selected product */
-// router.get('/search/:canton/:type', async function(req, res, next) {
-//   let canton = req.params.canton;
-//   let canton = req.params.type;
- 
-//   const product = await service.getSelectedProduct(canton , type )
-//   res.send(product);
-// });
-
+/** GET selected product by canton name and product type*/
+router.get('/search/canton/:cantonId/productType/:productTypeId', async function(req, res, next) {
+  let canton = req.params.cantonId;
+  let productType = req.params.productTypeId;
+   const product = await service.getSelectedProduct(canton, productType )
+   res.send(product);
+});
 
 export default router;
 

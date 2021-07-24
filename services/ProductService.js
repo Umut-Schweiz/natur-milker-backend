@@ -35,7 +35,7 @@ export async function getProductsByProducerId(producerId){
     return products;
 }
 
-// export async function getSelectedProduct(canton, type ){
-//     let product = await productRepository.findByCantonAndType(canton , type );
-//     return product;
-// }
+export async function getSelectedProduct(canton, productType ){
+    let products = await productRepository.findByCantonAndType(canton , productType );
+    return products;
+}

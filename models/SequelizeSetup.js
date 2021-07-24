@@ -3,6 +3,7 @@ import dbConfig from '../environment-config.json'
 import ProductModel from './Product.js'
 import ProducerModel from './Producer.js'
 
+
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
@@ -17,8 +18,10 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 
 const db = {}
 
+
 db.Sequelize = Sequelize
 db.sequelize = sequelize
+
 
 db.products = ProductModel(sequelize, Sequelize)
 db.producer = ProducerModel(sequelize, Sequelize)
